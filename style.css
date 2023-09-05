@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+body{
+  font-family: 'PT Sans', sans-serif;
+  color: white;
+  background-color: #212529;
+  text-align: center;
+}
+#movie-search{
+border: none;
+margin: 10px;
+border-radius: 5px;
+padding: 5px;
+text-align: center;
+font-size: 14pt;
+height: 30px;
+}
+#search{
+border: none;
+border-radius: 5px;
+padding: 10px;
+text-align: center;
+font-size: 14pt;
+background-color: red;
+color: white;
+cursor: pointer;
+}
+.movie-container{
+display: grid;
+flex-wrap: wrap;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+}
+.grid{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.movie-card{
+text-align: center;
+margin: 20px 0px;
+width: 320px;
+height: auto;
+position: relative;
+overflow: hidden;
+}
+img{
+width: 100%;
+border-radius: 10px;
+}
+#watch-later-container img{
+  width: 250px;
+}
+
+#watch-later-container{
+margin: auto;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 5px;
+}
+.position{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+#watch-later-container button{
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14pt;
+}
+@media screen and (max-width:1080px){
+.movie-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #watch-later-container{
+margin: auto;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 5px;
+}
+}
+@media screen and (max-width:700px){
+.movie-container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #watch-later-container{
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 5px;
+  }
+}
