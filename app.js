@@ -1,7 +1,8 @@
-function searchMovies() {
+import { tmdbApiKey } from './config.js';
+
+export function searchMovies() {
     const searchTerm = document.getElementById('movie-search').value;
-    const config = require('../config.json');
-    const apiKey = config.tmdbApiKey;
+    const apiKey = tmdbApiKey;
 
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`)
         .then(response => response.json())
@@ -34,9 +35,8 @@ function createMovieCard(movie) {
 
     const title = document.createElement('h2');
     title.textContent = movie.title;
-    const removeButton = createRemoveButton(movie); 
     
-
+    const removeButton = createRemoveButton(movie);
     movieCard.appendChild(posterImg);
     movieCard.appendChild(title);
     movieCard.appendChild(removeButton);
@@ -57,7 +57,6 @@ function createSaveButton(movie) {
 
 function saveMovieForLater(movie) {
     const watchLaterContainer = document.getElementById('watch-later-container');
-
     const movieCard = createMovieCard(movie);
     
     watchLaterContainer.appendChild(movieCard);
@@ -94,12 +93,12 @@ function loadSavedMovies() {
     }
 }
 
-function createRemoveFromWatchLaterButton(movie) {
+function createRemoveButton(movie) {
     const removeButton = document.createElement('button');
     removeButton.textContent = 'Remover';
     removeButton.addEventListener('click', () => {
         removeMovieFromWatchLaterList(movie);
-        removeButton.parentNode.remove();
+        removeButton.parentNode.remove(); 
     });
 
     return removeButton;
@@ -117,7 +116,6 @@ function removeMovieFromWatchLaterList(movie) {
     }
 }
 
-
 function saveAddedMovieToLocalStorage(movie) {
     if (typeof Storage !== 'undefined') {
         const addedMovies = JSON.parse(localStorage.getItem('addedMovies')) || [];
@@ -132,16 +130,6 @@ function saveAddedMovieToLocalStorage(movie) {
     } else {
         alert('Seu navegador não suporta armazenamento local. Não é possível salvar filmes adicionados.');
     }
-}
-function createRemoveButton(movie) {
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'Remover';
-    removeButton.addEventListener('click', () => {
-        removeMovieFromWatchLaterList(movie);
-        removeButton.parentNode.remove(); 
-    });
-
-    return removeButton;
 }
 
 function loadAddedMovies() {
@@ -162,6 +150,8 @@ function loadAddedMovies() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    const searchButton = document.getElementById('search');
+    searchButton.addEventListener('click', searchMovies);
     loadSavedMovies();
     loadAddedMovies();
 });
