@@ -51,7 +51,6 @@ function createSaveButton(movie) {
         saveMovieForLater(movie);
         saveButton.disabled = true; 
     });
-
     return saveButton;
 }
 

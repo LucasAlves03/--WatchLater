@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando Estilos</title>
+    <style>
+       
+        /* Estilos para a lista */
+.lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #212529;
+    color: white;
+}
+
+.lista li {
+    display: flex; /* Torna os elementos inline na mesma linha */
+    align-items: center; /* Alinha verticalmente os elementos */
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+}
+
+/* Estilos para a imagem */
+.lista img {
+    max-width: 100px; /* Define a largura máxima da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-right: 20px; /* Espaçamento entre a imagem e o texto */
+}
+
+/* Estilos para o texto e o botão */
+.lista p, .lista button {
+    margin: 20px;
+}
+
+/* Estilos para o botão */
+/* Estilizando os botões com a classe "botao" */
+.botao {
+    position: absolute;
+    right: 190px; /* Define os botões à direita da tela */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Estilizando os itens da lista */
+.lista li {
+    position: relative; /* Define como posição relativa para que os botões sejam posicionados relativamente a cada item da lista */
+    margin-bottom: 20px; /* Espaçamento vertical entre os itens */
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>Testando Estilos</h1>
+    <div class="container">
+        <ul class="lista">
+            <li>
+                <img src="https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg" alt="">
+                <p>John Wick: Chapter 4</p>
+                <button class="botao">Remover</button>
+            </li>
+            <hr>
+            <li>
+                <img src="https://image.tmdb.org/t/p/w500/NNxYkU70HPurnNCSiCjYAmacwm.jpg" alt="">
+                <p>Mission: Impossible - Dead Reckoning Part One</p>
+                <button class="botao">Remover</button>
+            </li>
+            <hr>
+            <li>
+                <img src="https://image.tmdb.org/t/p/w500/b47syIl3wreScfUSrCKb0D2d1Gg.jpg" alt="">
+                <p>John Wick</p>
+                <button class="botao">Remover</button>
+            </li>
+            <hr>
+            <li>
+                <img src="https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg" alt="">
+                <p>Gran Turismo</p>
+                <button class="botao">Remover</button>
+            </li>
+            <hr>
+            <li>
+                <img src="https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg" alt="">
+                <p>Teenage Mutant Ninja Turtles: Mutant Mayhem</p>
+                <button class="botao">Remover</button>
+            </li>
+            <hr>
+            <li>
+                <img src="https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg" alt="">
+                <p>Oppenheimer</p>
+                <button class="botao">Remover</button>
+            </li>
+            <hr>
+            <li>
+                <img src="https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg" alt="">
+                <p>Heart of Stone</p>
+                <button class="botao">Remover</button>
+            </li>
+        </ul>
+    </div>
+    
+</body>
+</html>
