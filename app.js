@@ -9,7 +9,7 @@ export function searchMovies() {
         .then(data => {
             const movies = data.results;
             const movieList = document.getElementById('movie-container');
-            movieList.innerHTML = ''; 
+            movieList.innerHTML = '';
 
             movies.forEach(movie => {
                 const movieCard = createMovieCard(movie);
@@ -25,6 +25,7 @@ export function searchMovies() {
         });
 }
 
+
 function createMovieCard(movie) {
     const movieCard = document.createElement('div');
     movieCard.classList.add('movie-card');
@@ -35,15 +36,19 @@ function createMovieCard(movie) {
 
     const title = document.createElement('h2');
     title.textContent = movie.title;
-    
+
+    const rating = document.createElement('p');
+    const roundedRating = Math.round(movie.vote_average * 10) / 10;
+    rating.textContent = `Avaliação: ⭐${roundedRating}`;
+
     const removeButton = createRemoveButton(movie);
     movieCard.appendChild(posterImg);
     movieCard.appendChild(title);
+    movieCard.appendChild(rating);
     movieCard.appendChild(removeButton);
 
     return movieCard;
 }
-
 function createSaveButton(movie) {
     const saveButton = document.createElement('button');
     saveButton.textContent = '+';
